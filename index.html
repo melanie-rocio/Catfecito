@@ -2,72 +2,89 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bienvenidos a Catfecito</title>
-    <link rel="stylesheet" href="../../Seccion_Contactos/css/style.css" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
-
   <body>
-    <header>
-      <div>
-        <h1>¡Bienvenidos a Catfecito!</h1>
-        <p>
-          Tu rincón favorito para disfrutar café rodeado de gatitos adorables.
-        </p>
-      </div>
-    </header>
-
     <nav>
       <ul>
-        <li><a href="../../Seccion_Bienvenida/assets/index.html">BIENVENIDA</a></li>
+        <li>
+          <a href="../../Seccion_Bienvenida/assets/index.html">BIENVENIDA</a>
+        </li>
         <li><a href="#">MENÚ</a></li>
         <li><a href="#">ADOPCIONES</a></li>
         <li><a href="#">PREGUNTAS FRECUENTES</a></li>
-        <li><a href="../../Seccion_Contactos/assets/index.html">CONTACTO</a></li>
+        <li><a href="#">CONTACTO</a></li>
       </ul>
     </nav>
 
-    <main>
-      <section id="historia">
-        <div>
-          <h2 style="color: #4e2e1e;">Nuestra historia</h2>
-          <p>
-            Catfecito nació de un sueño: unir el amor por los gatos con el
-            ritual del buen café. En nuestro espacio, podés compartir un momento
-            tranquilo mientras conocés gatitos que están listos para ser
-            adoptados.
+    <h2 class="borde-naranja">CONTACTO & UBICACIÓN</h2>
+
+    <section>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+          flex-wrap: wrap;
+          margin-top: 5px;
+        "
+      >
+        <div style="max-width: 400px; text-align: left">
+          <p style="font-size: 18px">
+            <strong
+              >C. 12, La Plata - Provincia de Buenos Aires<br />
+              catfecito@gmail.com</strong
+            >
           </p>
-        </div>
-      </section>
 
-      <section id="encuentra">
-        <img src="../img/gato en un cafe.png" alt="Imagen izquierda" class="imagen">
+          <p style="font-size: 18px">
+            Estamos en el centro histórico de la ciudad de La plata. Frente a la
+            Plaza Moreno.
+          </p>
 
-        <div>
-          <h2>¿Qué vas a encontrar?</h2>
-          <ul>
-            <li>Café de especialidad</li>
-            <li>Pastelería casera</li>
-            <li>Gatitos para acariciar</li>
-            <li>Gatitos que buscan hogar</li>
-            <li>Un espacio único y lleno de amor</li>
+          <p style="font-size: 20px"><strong>HORARIO:</strong></p>
+          <ul style="font-size: 18px">
+            <li>Miércoles a Lunes: 12pm – 8pm</li>
+            <li>Martes: Cerrado</li>
           </ul>
         </div>
 
-        <img src="../img/gatito.png" alt="Imagen derecha" class="imagen">
-      </section>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4612.105605300225!2d-57.95988299675163!3d-34.922498791702246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62e3fc93575%3A0x6ffaec3bf616e000!2sPlaza%20Moreno!5e0!3m2!1ses-419!2sar!4v1746133704899!5m2!1ses-419!2sar"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
 
-      <section id="experiencia">
-        <div>
-          <h2 style="color: #4e2e1e;"> ¡Sumate a esta experiencia única!</h2>
-          <p>
-            Te esperamos con una taza calentita y mucho ronroneo. Reservá tu
-            mesa y vení a vivir Catfecito.
-          </p>
-          <button class="reservar">Reservá tu lugar</button>
-        </div>
-      </section>
-    </main>
+    <h2>DÉJANOS UN MENSAJE</h2>
+
+    <section>
+      <img src="../img/gatito.png" alt="Gatito" />
+
+      <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" required />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+    </section>
 
     <footer>
       <p>
@@ -77,11 +94,18 @@
       </p>
       <div style="margin-top: 10px">
         <a href="#" style="margin: 0 10px">
-            <img src="../../Seccion_Contactos/img/fbbb.png" alt="Facebook" style="width: 35px; border-radius: 15px;" />
-            
+          <img
+            src="../img/fbbb.png"
+            alt="Facebook"
+            style="width: 35px; border-radius: 15px"
+          />
         </a>
         <a href="#" style="margin: 0 10px">
-          <img src="../../Seccion_Contactos/img/ig.jpg" alt="Instagram" style="width: 35px; border-radius: 13px;" />
+          <img
+            src="../img/ig.jpg"
+            alt="Instagram"
+            style="width: 35px; border-radius: 13px"
+          />
         </a>
       </div>
     </footer>
