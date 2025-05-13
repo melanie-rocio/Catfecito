@@ -1,0 +1,240 @@
+/* --- Estilo General (Body) --- */
+body {
+  background-color: #d6c4a0; /* Fondo crema */
+  color: #4e2e1e; /* Texto marrón oscuro */
+  font-family: Georgia, "Times New Roman", Times, serif; /* Fuente */
+  margin: 0; /* Quita márgenes predeterminados */
+  padding: 0; /* Quita relleno predeterminado */
+  text-align: center; /* Centra el contenido del texto */
+}
+
+/* --- Encabezado Principal (h1) --- */
+h1 {
+  font-size: 50px; /* Tamaño grande del encabezado */
+  font-family: Georgia, "Times New Roman", Times, serif; /* Fuente */
+}
+
+/* --- Párrafos (p) --- */
+p {
+  font-size: 25px; /* Tamaño mediano de texto */
+  font-family: cursive; /* Fuente cursiva */
+}
+
+/* --- Navegación (nav) --- */
+nav ul {
+  background-color: #e5d7be; /* Fondo crema */
+  list-style: none; /* Sin viñetas en la lista */
+  padding: 25px 0; /* Espaciado interno superior e inferior */
+  display: flex; /* Elementos en línea */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 20px; /* Espaciado entre elementos */
+  border: 4px solid #a05b18; /* Borde marrón */
+}
+
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente al pasar */
+  color: #67341a; /* Texto marrón oscuro al pasar el mouse */
+}
+
+nav a:visited {
+  color: #a05b18; /* Texto marrón oscuro para enlaces visitados */
+}
+
+a:link {
+  color: #a05b18; /* Texto marrón */
+  text-decoration: none; /* Sin subrayado */
+}
+
+nav a {
+  color: #8c3c15; /* Texto marrón oscuro */
+  text-decoration: none; /* Sin subrayado */
+  padding: 25px 10px; /* Espaciado interno */
+  font-size: 18px; /* Tamaño del texto */
+}
+
+/* --- ID "historia" --- */
+#historia {
+  background-color: #da8f44; /* Fondo naranja */
+  margin-left: 30px; /* Margen izquierdo */
+  margin-right: 30px; /* Margen derecho */
+  font-size: 20px; /* Tamaño del texto */
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+/* --- ID "encuentra" --- */
+#encuentra {
+  color: #4e2e1e; /* Texto marrón oscuro */
+  text-align: left; /* Alinea a la izquierda */
+  align-items: center; /* Alinea verticalmente */
+  font-size: 18px; /* Tamaño del texto */
+}
+
+#encuentra h2 {
+  font-size: 24px; /* Tamaño del subtítulo */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+/* --- Clase "imagen" --- */
+.imagen {
+  width: 200px; /* Ancho fijo */
+  height: auto; /* Mantiene la proporción */
+}
+
+/* --- ID "experiencia" --- */
+#experiencia {
+  background-color: #bb6917; /* Fondo marrón oscuro */
+  justify-content: center; /* Centra horizontalmente */
+}
+
+/* --- Encabezados de Nivel 2 (h2) --- */
+h2 {
+  color: #7a5230; /* Texto marrón claro */
+  margin: 40px 0; /* Margen superior e inferior */
+  font-family: Georgia, "Times New Roman", Times, serif; /* Fuente */
+  font-size: 35px; /* Tamaño grande del texto */
+}
+
+/* --- Clase "borde-naranja" del titulo h2 - contactos--- */
+.borde-naranja {
+  background-color: #e1853e; /* Fondo naranja */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  margin: 20px auto; /* Margen vertical y centrado */
+  max-width: 90%; /* Ancho máximo */
+  color: #4e2e1e; /* Texto marrón oscuro */
+}
+
+/* --- Secciones --- */
+section {
+  display: flex; /* Elementos en línea */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 40px; /* Espaciado entre elementos */
+  flex-wrap: wrap; /* Permite líneas adicionales */
+  padding: 20px; /* Espaciado interno */
+}
+
+section img {
+  width: 300px; /* Ancho fijo */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* --- Formularios --- */
+form {
+  max-width: 400px; /* Ancho máximo */
+  width: 100%; /* Ancho completo */
+  display: flex; /* Elementos en línea */
+  flex-direction: column; /* Apila elementos */
+  text-align: left; /* Texto alineado a la izquierda */
+}
+
+form label {
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 5px; /* Espaciado inferior */
+}
+
+form input,
+form textarea {
+  padding: 10px; /* Espaciado interno */
+  margin-top: 5px; /* Espaciado superior */
+  margin-bottom: 15px; /* Espaciado inferior */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+form button {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  background-color: #d98e04; /* Fondo naranja */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+form button:hover {
+  background-color: #b37000; /* Fondo más oscuro */
+}
+
+/* --- Clase "reservar" --- */
+.reservar {
+  background-color: #bb6917; /* Fondo marrón oscuro */
+  color: #ffb98e; /* Texto crema */
+  border: none; /* Sin borde */
+  padding: 12px 25px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño del texto */
+  cursor: pointer; /* Cambia a mano al pasar */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.reservar:hover {
+  background-color: #a55812; /* Fondo más oscuro */
+}
+
+/* --- Pie de Página (footer) --- */
+footer {
+  background-color: black; /* Fondo negro */
+  color: #d6c4a0; /* Texto crema */
+  padding-top: 10px; /* Espaciado superior */
+  padding-bottom: 10px; /* Espaciado inferior */
+  text-align: center; /* Texto centrado */
+  font-size: 100%; /* Tamaño de fuente base */
+}
+
+/* --- Distintas pantallas --- */
+
+/* Para pantallas pequeñas (max-width: 576px) */
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 30px; /* Reduce el tamaño del encabezado */
+    background-color: #da8f44; /* Fondo naranja */
+    border-radius: 30px; /* Bordes redondeados */
+  }
+
+  p {
+    font-size: 20px; /* Reduce el tamaño del texto */
+  }
+
+  nav ul {
+    padding: 12px 0; /* Reduce el espaciado */
+    margin-left: 10px; /* Margen izquierdo reducido */
+    margin-right: 10px; /* Margen derecho reducido */
+  }
+
+  a:link {
+    font-size: 12px; /* Reduce el tamaño de los enlaces */
+  }
+
+  .borde-naranja {
+    background-color: #da8f44; /* Fondo naranja */
+    font-size: 30px; /* Reduce tamaño del texto */
+    border-radius: 10px; /* Bordes menos redondeados */
+    margin-left: 45px; /* Márgenes laterales */
+    margin-right: 45px;
+  }
+}
+
+/* Para pantallas medianas (min-width: 580px) */
+@media (min-width: 580px) {
+  h1 {
+    background-color: #da8f44; /* Fondo naranja */
+    font-size: 40px; /* Tamaño intermedio */
+    border-radius: 40px; /* Bordes redondeados */
+  }
+
+  a:link {
+    font-size: 13px; /* Tamaño intermedio de enlaces */
+  }
+}
+
+/* Para pantallas grandes (min-width: 880px) */
+@media (min-width: 880px) {
+  h1 {
+    background-color: #d6c4a0; /* Fondo crema */
+    font-size: 50px; /* Tamaño grande */
+  }
+
+  a:link {
+    font-size: 20px; /* Tamaño grande de enlaces */
+  }
+}
