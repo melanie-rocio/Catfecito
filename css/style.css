@@ -17,7 +17,7 @@ h1 {
 /* --- Párrafos (p) --- */
 p {
   font-size: 25px; /* Tamaño mediano de texto */
-  font-family: cursive; /* Fuente cursiva */
+  font-family: Georgia, "Times New Roman", Times, serif; /* Fuente estándar */
 }
 
 /* --- Navegación (nav) --- */
@@ -193,6 +193,7 @@ footer {
 
   p {
     font-size: 20px; /* Reduce el tamaño del texto */
+    font-family: Georgia, "Times New Roman", Times, serif; /* Fuente estándar */
   }
 
   nav ul {
