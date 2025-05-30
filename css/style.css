@@ -121,6 +121,15 @@ section {
   padding: 20px; /* Espaciado interno */
 }
 
+.seccion-ubicacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
 .formulario-contacto {
   display: flex; /* Elementos en línea */
   justify-content: center; /* Centra horizontalmente */
@@ -605,8 +614,8 @@ footer {
   }
 }
 
-/* ===== ESTILOS PARA PANTALLAS MEDIANAS (580px a 767px) ===== */
-@media (min-width: 580px) and (max-width: 767px) {
+/* ===== ESTILOS PARA PANTALLAS MEDIANAS (580px a 899px) ===== */
+@media (min-width: 580px) and (max-width: 899px) {
 
   /* Título de bienvenida */
   .titulo-inicio {
@@ -617,26 +626,9 @@ footer {
     max-width: 80%;            /* Máximo ancho del 80% del contenedor */
   }
 
-  /* Contenedor #encuentra */
-  #encuentra {
-    flex-direction: column;    /* Apilado vertical */
-    align-items: center;       /* Centrado horizontal */
-  }
-
-  /* Primer imagen */
-  #encuentra img:first-of-type {
-    order: 1;                 /* Primero */
-  }
-
-  /* Texto dentro de #encuentra */
-  #encuentra div {
-    order: 2;                 /* Segundo */
-    text-align: left;         /* Texto alineado a la izquierda */
-  }
-
-  /* Última imagen */
-  #encuentra img:last-of-type {
-    order: 3;                 /* Tercero */
+  #encuentra .imagen {
+    width: 150px;
+    height: auto;
   }
 
   /* -------- MENÚ para pantallas medianas -------- */
@@ -658,7 +650,7 @@ footer {
     padding: 10px;                /* Espaciado */
     margin: 10px auto;            /* Centrado horizontal */
     width: 90%;                   /* Ancho relativo */
-    max-width: 500px;             /* Máximo ancho */
+    max-width: 800px;             /* Máximo ancho */
     cursor: pointer;              /* Cursor pointer */
     font-weight: bold;            /* Negrita */
   }
@@ -752,9 +744,9 @@ footer {
 }
 
 
-/*  ESTILOS PARA PANTALLAS GRANDES (>=880px) */
+/*  ESTILOS PARA PANTALLAS GRANDES (>=900px) */
 
-@media (min-width: 880px) {
+@media (min-width: 900px) {
 
   /* Título principal grande */
   h1 {
