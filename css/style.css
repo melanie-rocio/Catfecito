@@ -17,7 +17,6 @@ h1 {
 /* --- Párrafos (p) --- */
 p {
   font-size: 25px; /* Tamaño mediano de texto */
-  font-family: cursive; /* fuente cursiva */
 }
 
 /* --- Navegación (nav) --- */
@@ -762,6 +761,10 @@ footer {
     background-color: #d6c4a0;
     font-size: 50px;
   }
+
+  p {
+  font-family: cursive; /* fuente cursiva */
+}
 
   /* Enlaces grandes */
   a:link {
