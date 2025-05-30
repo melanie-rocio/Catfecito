@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+     <nav>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">☰</label>
+      <ul class="menu">
+        <li> <a href="../index.html">BIENVENIDA</a></li>
+        <li><a href="#">MENÚ</a></li>
+        <li><a href="adopciones.html">ADOPCIONES</a></li>
+        <li><a href="#">PREGUNTAS FRECUENTES</a></li>
+        <li><a href="../Seccion Contacto/contacto.html">CONTACTO</a></li>
+      </ul>
+    </nav>
+
+    <section class="tituloAdopciones">
+      <h1>¿Buscas un nuevo mejor amigo?</h1>
+      <p>¡Aquí encontrarás todo lo que necesitas saber sobre nuestro proceso de adopción!</p>
+    </section>
+
+    <section class="seccion-marron">
+      <div class="texto">
+        <h2 style="color: #da8f44;">Tenga en cuenta:</h2>
+        <p>
+          El proceso de adopción puede tardar entre 4 y 8 semanas una vez iniciadas las entrevistas. 
+          Con un equipo pequeño y muchos gatitos, agradecemos su paciencia y entendemos perfectamente que 
+          la espera puede ser difícil. También le recomendamos revisar su solicitud si tiene alguna pregunta 
+          o inquietud enviando un correo electrónico a catfecito@gmail.com.
+        </p>
+      </div>
+      <div class="imagen">
+        <img src="../img/GatoPasoUno.jpg" alt="Gatito adorable">
+      </div>
+    </section>
+
+    <section class="seccion-naranja">
+      <div class="imagen">
+        <img src="../img/GatoPasoDos.jpg" alt="Gato en silla">
+      </div>
+      <div class="texto">
+        <h2>PASO 1:</h2>
+        <p>
+          Complete nuestra solicitud de adopción.
+        </p>
+        <button onclick="location.href='#formulario-solicitud'" >SOLICITUD DE ADOPCIÓN</button>
+      </div>
+    </section>
+
+    <section class="seccion-marron">
+      <div class="texto">
+        <h2 style="color: #da8f44;">PASO 2:</h2>
+        <p>
+          Cuando el gatito que solicitaste esté listo para su hogar definitivo, ¡nuestro equipo de adopción comenzará a revisar las 
+          solicitudes! Nuestros gatitos son muy cariñosos y la mayoría recibe muchísimas solicitudes. 
+        </p>
+        <p>
+          Revisaremos cada solicitud y contactaremos solo a 5-10 solicitantes que se ajusten mejor a las necesidades de ese gato. 
+          Si su solicitud es seleccionada, le enviaremos un correo electrónico para programar una entrevista telefónica.
+        </p>
+      </div>
+      <div class="imagen">
+        <img src="../img/GatoPasoTres.png" alt="Gatito adorable">
+      </div>
+    </section>
+
+    <section class="seccion-naranja">
+      <div class="imagen">
+        <img src="../img/GatoPasoCuatro.jpg" alt="Gato en silla">
+      </div>
+      <div class="texto">
+        <h2>PASO 3:</h2>
+        <p>
+          Si eres el afortunado adoptante, ¡es hora de preparar tu hogar para tu adorable nuevo compañero de piso! 
+          Te contaremos sus cosas favoritas para que puedas disfrutar de una transición sin contratiempos.
+        </p>
+      </div>
+    </section>
+
+    <section class="seccion-marron">
+      <div class="texto">
+        <h2 style="color: #da8f44;">Paso 4:</h2>
+        <p>
+          ¡Una vez que esté todo instalado en casa, programaremos un día de adopción!
+        </p>
+      </div>
+      <div class="imagen">
+        <img src="../img/GatoPasoCinco.png" alt="Gatito adorable">
+      </div>
+    </section>
+
+    <section>
+
+        <h2 id="formulario-solicitud" class="titulo-formulario">
+            <img src="../img/Huella.png" alt="Huella de gato" class="icono-huella">
+            SOLICITUD DE ADOPCIÓN
+            <img src="../img/Huella.png" alt="Huella de gato" class="icono-huella">
+        </h2>
+
+    <form class="formulario-adopciones">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="asunto">Número de contacto</label>
+        <input type="text" id="contacto" name="contacto" required />
+
+        <label for="asunto">Gato(s) interesado(s)</label>
+        <input type="text" id="asunto" name="asunto" required />
+
+        <label for="asunto">Fecha de la visita</label>
+        <input type="text" id="Fecha" name="Fecha" required />
+
+        <label for="mensaje">¿Por qué este gato es perfecto para ti?</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <label for="mensaje">Descripción del entorno del hogar y/o otras notas (es decir, situación de la vivienda, otras mascotas, compañeros de habitación, etc.):</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+      </form>
+      </section>
+
+    <footer>
+      <p>
+        <strong>C. 12, La Plata - Provincia de Buenos Aires</strong><br />
+        (011) 23483341<br />
+        catfecito@gmail.com
+      </p>
+      <div style="margin-top: 10px">
+        <a href="#" style="margin: 0 10px">
+          <img
+            src="../img/fbbb.png"
+            alt="Facebook"
+            style="width: 35px; border-radius: 15px"
+          />
+        </a>
+        <a href="#" style="margin: 0 10px">
+          <img
+            src="../img/ig.jpg"
+            alt="Instagram"
+            style="width: 35px; border-radius: 13px"
+          />
+        </a>
+      </div>
+    </footer>
+
+</body>
+</html>
