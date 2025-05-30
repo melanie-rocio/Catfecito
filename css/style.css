@@ -460,6 +460,11 @@ footer {
     border-radius: 30px;          /* Bordes redondeados */
   }
 
+  .tituloAdopciones h1 {
+    background-color: #da8f44;   /* Fondo naranja */
+    border-radius: 30px;          /* Bordes redondeados */
+  }
+
   /* Estilo base para todos los párrafos */
   p {
     font-size: 20px;                             /* Texto un poco grande para mejor lectura */
@@ -624,6 +629,11 @@ footer {
     border-radius: 40px;       /* Bordes más redondeados */
     margin: 0 auto;            /* Centrado horizontal */
     max-width: 80%;            /* Máximo ancho del 80% del contenedor */
+  }
+
+  .tituloAdopciones h1 {
+    background-color: #da8f44;   /* Fondo naranja */
+    border-radius: 30px;          /* Bordes redondeados */
   }
 
   #encuentra .imagen {
