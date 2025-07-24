@@ -178,6 +178,8 @@ form button {
 
 form button:hover {
   background-color: #b37000; /* Fondo más oscuro */
+  transform: translateY(-2px); /* Efecto elevación */
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25); /* Más sombra */
 }
 
 /* --- Clase "reservar" --- */
@@ -194,6 +196,8 @@ form button:hover {
 
 .reservar:hover {
   background-color: #a55812; /* Fondo más oscuro */
+  transform: translateY(-2px); /* Efecto elevación */
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.25); /* Más sombra */
 }
 
 /* Contenedor principal para títulos de adopciones - Resetea todos los estilos heredados */
@@ -312,7 +316,7 @@ form button:hover {
 }
 
 /* Botones dentro de la sección naranja */
-.seccion-naranja button {
+#boton-naranja {
   padding: 1rem 2rem; /* Espaciado interno vertical/horizontal */
   font-size: 1.2rem; /* Tamaño de fuente */
   color: #fff; /* Texto blanco */
@@ -447,11 +451,10 @@ footer {
   text-align: center; /* Texto centrado */
   font-size: 100%; /* Tamaño de fuente base */
 }
-/* ===== Menu de Catfecito ===== */
+/* ====================================== Menu de Catfecito ========================================================== */
 
 /* --- Menu inicio --- */
 .menu-inicio {
-   background-color: #da8f44; 
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
   font-size: 20px; /* Tamaño del texto */
@@ -463,7 +466,7 @@ footer {
 /* --- Seccion de cafes --- */
 
 .seccion-cafes{
-  background-color: #fff; 
+  background-color: #f5e9d9; 
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
   font-size: 20px; /* Tamaño del texto */
@@ -478,8 +481,10 @@ footer {
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
   font-size: 40px; /* Tamaño del texto */
-  border-radius: 10px; /* Bordes redondeados */
-  
+  border-radius: 20px; /* Bordes redondeados */
+  margin-top: 30px; 
+  padding-top: 5px;   
+  padding-bottom: 5px;  
 }
 .cafe-leche-titulo{
   color: #fff; /* Texto blanco */
@@ -493,12 +498,14 @@ font-size: x-large; /* Tamaño del texto */
 
 /* --- cafe solo --- */
 .cafe-solo{
- background-color:#faf5f3; /* Fondo crema */
+ background-color: #f5e9d9; 
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
-  font-size: 40px; /* Tamaño del texto */
-  border-radius: 10px; /* Bordes redondeados */
-  
+  font-size: 50px; /* Tamaño del texto */
+  border-radius: 20px; /* Bordes redondeados */
+  margin-top: 30px; 
+  padding-top: 0.5px;   
+  padding-bottom: 5px;  
 }
 .cafe-solo-titulo{
   color:#4e2e1e; /* Texto blanco */
@@ -514,8 +521,10 @@ font-size:xx-large;
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
   font-size: 40px; /* Tamaño del texto */
-  border-radius: 10px; /* Bordes redondeados */
-  
+  border-radius: 20px; /* Bordes redondeados */
+  margin-top: 30px; 
+  padding-top: 5px;   
+  padding-bottom: 5px;  
 }
 .cafe-matcha-titulo{
   color: #fff; /* Texto blanco */
@@ -540,7 +549,7 @@ font-size:xx-large;
   margin-right: 30px; /* Margen derecho */
   font-size: 20px; /* Tamaño del texto */
   border-radius: 20px; /* Bordes redondeados */
-
+  margin-top: 60px; 
 }
 /* --- PatiMiau --- */
 .dulce-patimiu{
@@ -548,7 +557,10 @@ font-size:xx-large;
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
   font-size: 40px; /* Tamaño del texto */
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 20px; /* Bordes redondeados */
+  margin-top: 30px; 
+  padding-top: 5px;   
+  padding-bottom: 5px;  
 }
 .dulce-patimiu-titulo{
   color: #fff; /* Texto blanco */ 
@@ -559,11 +571,14 @@ font-size:xx-large;
 }
 /* --- Galletas de Michi --- */
 .dulce-catlletitas{
-  background-color:#faf5f3; /* Fondo crema */
+  background-color: #f5e9d9; 
   margin-left: 30px; /* Margen izquierdo */
   margin-right: 30px; /* Margen derecho */
   font-size: 40px; /* Tamaño del texto */
   border-radius: 10px; /* Bordes redondeados */ 
+  margin-top: 30px; 
+  padding-top: 5px;   
+  padding-bottom: 5px;  
 }
 .dulce-catlletitas-titulo{
   color:#4e2e1e; /* Texto marrón oscuro */
@@ -580,6 +595,9 @@ font-size:xx-large;
   margin-right: 30px; /* Margen derecho */
   font-size: 40px; /* Tamaño del texto */
   border-radius: 10px; /* Bordes redondeados */
+  margin-top: 30px; 
+  padding-top: 5px;   
+  padding-bottom: 5px;  
 }
 .dulce-pan-michu-titulo{
   color: #fff; /* Texto blanco */
@@ -589,6 +607,66 @@ font-size:xx-large;
   color: #fff; /* Texto blanco */
   font-size: x-large; /* Tamaño del texto */
 }
+
+.boton-michi {
+  background-color: #67341a;
+  color: #fff;
+  padding: 14px 26px;
+  font-size: 20px;
+  border: 2px solid #67341a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.boton-michi:hover {
+  background-color: #8b4c27; /* un poquito más claro */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------------------------------------------------------------*/
+/*-------------------- Seccion Preguntas Frecuenstes -----------------------------*/
+
+.frecuentes {
+  text-align: center;
+}
+
+.frecuentes h1 {
+  font-size: 30px;
+  text-align: center;
+  background-color: #da8f44;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.frecuentes h2 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.frecuentes p {
+  text-align: center;
+  font-size: 20px;
+}  
+
+.icono-red {
+  display: inline-block;
+  margin: 0 10px;
+  color: #D9B382; /* color suave y cálido que combina con el texto */
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.icono-red i {
+  font-size: 30px;
+}
+
+.icono-red:hover {
+  color: #ff9800; /* color destacado al pasar el mouse */
+  transform: scale(1.2); /* efecto zoom */
+}
+
 /* -------------------------------- DISTINTAS PANTALLAS -------------------------------------------- */
 
 /* ===== ESTILOS PARA DISPOSITIVOS PEQUEÑOS (hasta 576px) ===== */
@@ -923,27 +1001,3 @@ font-size:xx-large;
     font-size: 20px;
   }
 }
-
-/*--------------------------------------------------------------------------------*/
-
-.frecuentes {
-  text-align: center;
-}
-
-.frecuentes h1 {
-  font-size: 30px;
-  text-align: center;
-  background-color: #da8f44;
-  border-radius: 30px;
-  padding: 20px;
-}
-
-.frecuentes h2 {
-  font-size: 25px;
-  text-align: center;
-}
-
-.frecuentes p {
-  text-align: center;
-  font-size: 20px;
-}  
