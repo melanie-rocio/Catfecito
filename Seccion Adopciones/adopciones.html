@@ -95,6 +95,10 @@
       </div>
     </section>
 
+    <h2 class="titulo-formulario">GATITOS EN ADOPCIÓN</h2>
+
+    <div id="contenedor-gatitos"></div>
+
     <section>
 
         <h2 id="formulario-solicitud" class="titulo-formulario">
@@ -116,14 +120,14 @@
         <label for="asunto">Gato(s) interesado(s)</label>
         <input type="text" id="asunto" name="asunto" required />
 
-        <label for="asunto">Fecha de la visita</label>
-        <input type="text" id="Fecha" name="Fecha" required />
+        <label for="fecha">Fecha de la visita</label>
+        <input type="text" id="fecha" name="fecha" required />
 
         <label for="mensaje">¿Por qué este gato es perfecto para ti?</label>
         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
         <label for="mensaje">Descripción del entorno del hogar y/o otras notas (es decir, situación de la vivienda, otras mascotas, compañeros de habitación, etc.):</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <textarea id="datoAdicional" name="mensaje" rows="4" required></textarea>
 
         <button type="submit">ENVIAR</button>
       </form>
@@ -145,6 +149,7 @@
         </a>
       </div>
     </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>

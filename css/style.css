@@ -667,6 +667,71 @@ font-size:xx-large;
   transform: scale(1.2); /* efecto zoom */
 }
 
+/*--------------------Seccion Adopcion -----------------*/
+
+#contenedor-gatitos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card-gatito {
+   background-color: #fcefdc;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 16px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Para empujar el botón al fondo */
+  align-items: center;
+  text-align: center;
+}
+
+.card-gatito img {
+  width: 100%;
+  height: 150px; /* o 160px si te gusta más alta */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Nombre */
+.card-gatito h3 {
+  margin-top: 12px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Descripción */
+.card-gatito p {
+  flex-grow: 1; /* Ocupa el espacio vertical disponible */
+  margin: 12px 0;
+}
+
+.card-gatito:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Botón */
+.card-gatito button {
+  margin-top: auto;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  background-color: #e6d3c1;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-gatito button:hover {
+  background-color: #d2bfae;
+}
+
 /* -------------------------------- DISTINTAS PANTALLAS -------------------------------------------- */
 
 /* ===== ESTILOS PARA DISPOSITIVOS PEQUEÑOS (hasta 576px) ===== */
