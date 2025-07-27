@@ -125,3 +125,86 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+
+
+//------------------VALIDACION DEL FORMULARIO DE CONTACTO---------------
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".formulario-contacto form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita el envío real del formulario
+
+      // Obtener los valores de los campos
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const asunto = document.getElementById("asunto").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      // Validar que todos los campos estén llenos
+      if (nombre && email && asunto && mensaje) {
+
+         Swal.fire({
+        title: `Formulario enviado con exito! 🐾`,
+        text: "Gracias por tu mensaje, te estaremos respondiendo a la brevedad.",
+        confirmButtonText: "¡Genial!",
+        confirmButtonColor: "#da8f44",
+      });
+
+      } else {
+        alert("Por favor rellenar todos los campos");
+      }
+    });
+  });
+
+//------------JS PARA PREGUNTAS FRECUENTES( DATOS GAURDADOS EN LOCALSTORAGE)-----------
+
+alert ("Si tenés otra duda,  no dudes en contactarnos!")
+
+
+let ciudad = prompt("Si te gustaria tener un Catfecito cerca,  contanos cual es tu ciudad")
+
+console.log(ciudad);
+
+localStorage.setItem("ciudad",ciudad);
+
+let ciudadlocalstorage = localStorage.getItem("ciudad")
+
+console.log(ciudadlocalstorage);
+
+
+
+//----------JS SECCION MENU ( BASE DE DATOS TIPO JSON,DATOS GUARDADOS Y TRAIDOS DEL LOCALSTORAGE)-------
+
+
+const bebidas = [
+  {
+    nombre: "CAT-LATTE (Café con leche)",
+    descripcion: "Delicado y suave como una caricia felina. Café espresso con leche cremosa.",
+    clase: "cafe-leche",
+    img: "../img/caf late(cafe con leche).webp",
+    alt: "foto de un café cremoso"
+  },
+  {
+    nombre: "Gato Solo",
+    descripcion: "Puro, intenso, sin vueltas. Como un michi con carácter fuerte.",
+    clase: "cafe-solo",
+    img: "../img/20250602_1545_Catfecito Café y Gato_simple_compose_01jwrzb5e1fn695vwdngtsaa9s.png",
+    alt: "foto de una taza de café solo"
+  },
+  {
+    nombre: "Matcha-miau",
+    descripcion: "Verde vibrante y lleno de vida. Té matcha batido con leche suave: un mimo oriental.",
+    clase: "cafe-matcha",
+    img: "../img/20250602_1549_Taza Catfecito con Matcha_simple_compose_01jwrzjrjxe68ttprj178dmz3v.png",
+    alt: "una taza de matcha"
+  }
+];
+
+
+const bebidasJason = JSON.stringify(bebidas);
+console.log(bebidasJason);
+
+localStorage.setItem("bebidas", bebidasJason);
