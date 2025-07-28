@@ -1,210 +1,266 @@
-// Array de objetos con información de cada gatito
+//Perdon los comentarios es para entender mejor y no olvidarme.
+
+// ------------------- ARRAY DE GATITOS -------------------
+// Define un array constante 'gatitos' que contiene objetos con información de gatos para adopción
 const gatitos = [
   {
-    nombre: "Bigotes",
-    imagen: "../img/GatoPasoUno.jpg",
-    descripcion: "Curioso y observador, ¡nunca se le escapa nada!",
+    nombre: "Bigotes", // Nombre del primer gato
+    imagen: "../img/GatoPasoUno.jpg", // Ruta de la imagen
+    descripcion: "Curioso y observador, ¡nunca se le escapa nada!", // Descripción
   },
   {
-    nombre: "Muffin",
-    imagen: "../img/GatoPasoDos.jpg",
-    descripcion: "Le encantan los abrazos y el atún.",
+    nombre: "Muffin", // Nombre del segundo gato
+    imagen: "../img/GatoPasoDos.jpg", // Ruta de la imagen
+    descripcion: "Le encantan los abrazos y el atún.", // Descripción
   },
   {
-    nombre: "Canela",
-    imagen: "../img/GatoPasoTres.png",
-    descripcion: "Le gusta mirar por la ventana todo el día.",
+    nombre: "Canela", // Nombre del tercer gato
+    imagen: "../img/GatoPasoTres.png", // Ruta de la imagen
+    descripcion: "Le gusta mirar por la ventana todo el día.", // Descripción
   },
   {
-    nombre: "Rayas",
-    imagen: "../img/GatoPasoCuatro.jpg",
-    descripcion: "Un remolino de energía, ideal para jugar.",
+    nombre: "Rayas", // Nombre del cuarto gato
+    imagen: "../img/GatoPasoCuatro.jpg", // Ruta de la imagen
+    descripcion: "Un remolino de energía, ideal para jugar.", // Descripción
   },
   {
-    nombre: "Copito",
-    imagen: "../img/gatitorojocopia.png",
-    descripcion: "Duerme 18 horas y ronronea las otras 6.",
+    nombre: "Copito", // Nombre del quinto gato
+    imagen: "../img/gatitorojocopia.png", // Ruta de la imagen
+    descripcion: "Duerme 18 horas y ronronea las otras 6.", // Descripción
   },
 ];
 
-// Selecciona el contenedor donde se van a mostrar las tarjetas de gatitos
+// Obtiene el elemento del DOM con id "contenedor-gatitos" donde se mostrarán las tarjetas
 const contenedor = document.getElementById("contenedor-gatitos");
 
-// Trae del localStorage los nombres de los gatitos ya adoptados (si existen)
+// Obtiene del localStorage los nombres de gatos ya adoptados (o array vacío si no hay)
 let adoptados = JSON.parse(localStorage.getItem("gatitosAdoptados")) || [];
 
-// ------------------------------ MOSTRAR TARJETAS ------------------------------
+// ------------------- MOSTRAR TARJETAS en SECCION ADOPCION -------------------
+// Verifica si existe el contenedor antes de manipularlo
 if (contenedor) {
-  // Por cada gatito del array se genera una tarjeta en HTML
+  // Itera sobre cada gato en el array 'gatitos'
   gatitos.forEach((gato, index) => {
-    // Verifica si el gatito ya fue adoptado
+    // Verifica si el gato actual está en la lista de adoptados
     const adoptado = adoptados.includes(gato.nombre);
 
-    // Crea el HTML de la tarjeta del gatito
+    // Crea el HTML de la tarjeta del gato con plantilla
     const tarjeta = `
       <div class="card-gatito">
-        <img src="${gato.imagen}" alt="${gato.nombre}">
-        <h3>${gato.nombre}</h3>
-        <p>${gato.descripcion}</p>
+        <img src="${gato.imagen}" alt="${gato.nombre}"> <!-- Imagen del gato -->
+        <h3>${gato.nombre}</h3> <!-- Nombre del gato -->
+        <p>${gato.descripcion}</p> <!-- Descripción del gato -->
         <button class="btn-adoptar" data-index="${index}" ${
       adoptado ? "disabled" : ""
     }>
-          ${adoptado ? "¡Ya adoptado!" : "Adoptar"}
+          ${
+            adoptado ? "¡Ya adoptado!" : "Adoptar"
+          } <!-- Texto condicional del botón -->
         </button>
       </div>
     `;
 
-    // Agrega la tarjeta al contenedor del HTML
+    // Agrega la tarjeta al contenido del contenedor
     contenedor.innerHTML += tarjeta;
   });
 }
 
-// --------------------------- INTERACCIÓN --------------------------------------
+// ------------------- INTERACCIÓN boton de ADOPCIÓN -------------------
+// Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
-  // Selecciona todos los botones de "Adoptar"
+  // Selecciona todos los botones con clase 'btn-adoptar'
   const botones = document.querySelectorAll(".btn-adoptar");
 
-  // Agrega evento click a cada botón
-  botones.forEach((boton) => {
-    const index = parseInt(boton.dataset.index); // obtiene el índice del gatito correspondiente
+  // Si existen botones...
+  if (botones.length > 0) {
+    // Itera sobre cada botón
+    botones.forEach((boton) => {
+      // Obtiene el índice del gato desde el atributo data-index
+      const index = parseInt(boton.dataset.index);
 
-    boton.addEventListener("click", () => {
-      const nombre = gatitos[index].nombre;
-      const imagen = gatitos[index].imagen;
+      // Agrega un evento para el click en el botón
+      boton.addEventListener("click", () => {
+        // Obtiene nombre e imagen del gato correspondiente
+        const nombre = gatitos[index].nombre;
+        const imagen = gatitos[index].imagen;
 
-      // Auto-rellena el campo de "asunto" con el nombre del gato adoptado
-      const inputAsunto = document.getElementById("asunto");
-      if (inputAsunto && !inputAsunto.value.includes(nombre)) {
-        inputAsunto.value += inputAsunto.value ? `, ${nombre}` : nombre;
-      }
+        // Busca el input de asunto y agrega el nombre del gato si no está
+        const inputAsunto = document.getElementById("asunto");
+        if (inputAsunto && !inputAsunto.value.includes(nombre)) {
+          inputAsunto.value += inputAsunto.value ? `, ${nombre}` : nombre;
+        }
 
-      // Si ya fue adoptado, no hace nada
-      if (adoptados.includes(nombre)) return;
+        // Si ya está adoptado, no hace nada
+        if (adoptados.includes(nombre)) return;
 
-      // Muestra alerta con SweetAlert al adoptar
-      Swal.fire({
-        title: `¡Adoptaste a ${nombre}! 🐾`,
-        text: "Nos pondremos en contacto para seguir el proceso.",
-        imageUrl: imagen,
-        imageAlt: `Foto de ${nombre}`,
-        imageWidth: 200,
-        confirmButtonText: "¡Genial!",
-        confirmButtonColor: "#da8f44",
+        // Muestra alerta con SweetAlert2
+        Swal.fire({
+          title: `¡Adoptaste a ${nombre}! 🐾`,
+          text: "Nos pondremos en contacto para seguir el proceso.",
+          imageUrl: imagen, // Muestra imagen del gato
+          imageAlt: `Foto de ${nombre}`,
+          imageWidth: 200,
+          confirmButtonText: "¡Genial!",
+          confirmButtonColor: "#da8f44",
+        });
+
+        // Agrega el nombre a la lista de adoptados
+        adoptados.push(nombre);
+        // Guarda en localStorage
+        localStorage.setItem("gatitosAdoptados", JSON.stringify(adoptados));
+
+        // Actualiza el botón
+        boton.textContent = "¡Ya adoptado!";
+        boton.disabled = true;
       });
-
-      // Guarda el nombre del gatito adoptado en el array
-      adoptados.push(nombre);
-
-      // Guarda la lista de adoptados en localStorage
-      localStorage.setItem("gatitosAdoptados", JSON.stringify(adoptados));
-
-      // Cambia el botón a "¡Ya adoptado!" y lo desactiva
-      boton.textContent = "¡Ya adoptado!";
-      boton.disabled = true;
     });
-  });
 
-  // Si ya había adoptados, auto-rellena el campo "asunto" al cargar la página
-  const inputAsunto = document.getElementById("asunto");
-  if (inputAsunto && adoptados.length > 0) {
-    inputAsunto.value = adoptados.join(", ");
+    // Precarga el campo asunto con gatos ya adoptados
+    const inputAsunto = document.getElementById("asunto");
+    if (inputAsunto && adoptados.length > 0) {
+      inputAsunto.value = adoptados.join(", ");
+    }
   }
 });
 
-// -------------------------- RESERVA DE MESAS CON CALENDLY ---------------------------
+// ------------------- RESERVAS CALENDLY en INICIO -------------------
+// Espera a que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", function () {
-  // Selecciona el botón de reservar
+  // Obtiene el botón de reservar
   const btn = document.getElementById("reservar");
+
+  // Si existe el botón...
   if (btn) {
-    // Al hacer click en el botón, abre el widget emergente de Calendly
+    // Agrega event listener para el click
     btn.addEventListener("click", function () {
+      // Abre el popup de Calendly con la URL especificada
       Calendly.initPopupWidget({
         url: "https://calendly.com/meortega-frba/reserva_mesa_catcafe",
       });
-      return false; // evita que el botón recargue la página
+      return false; // Previene el comportamiento por defecto
     });
   }
 });
 
-
-
-
-//------------------VALIDACION DEL FORMULARIO DE CONTACTO---------------
-
+// ------------------- VALIDACIÓN FORMULARIO DE CONTACTO -------------------
+// Espera a que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".formulario-contacto form");
+  // Obtiene el formulario de contacto
+  const form = document.querySelector(".formulario-contacto form");
 
+  // Si existe el formulario...
+  if (form) {
+    // Agrega event listener para el submit
     form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Evita el envío real del formulario
+      event.preventDefault(); // Evita el envío normal del form
 
-      // Obtener los valores de los campos
+      // Obtiene y limpia los valores de los campos
       const nombre = document.getElementById("nombre").value.trim();
       const email = document.getElementById("email").value.trim();
       const asunto = document.getElementById("asunto").value.trim();
       const mensaje = document.getElementById("mensaje").value.trim();
 
-      // Validar que todos los campos estén llenos
-      if (nombre && email && asunto && mensaje) {
-
-         Swal.fire({
-        title: `Formulario enviado con exito! 🐾`,
-        text: "Gracias por tu mensaje, te estaremos respondiendo a la brevedad.",
-        confirmButtonText: "¡Genial!",
-        confirmButtonColor: "#da8f44",
-      });
-
+      // Valida que todos los campos tengan contenido
+      if (!nombre || !email || !asunto || !mensaje) {
+        // Muestra alerta de error con SweetAlert2
+        Swal.fire({
+          icon: "warning",
+          title: "Faltan datos",
+          text: "Por favor completá todos los campos.",
+          confirmButtonColor: "#da8f44",
+        });
       } else {
-        alert("Por favor rellenar todos los campos");
+        // Muestra alerta de éxito
+        Swal.fire({
+          title: "Formulario enviado con éxito 🐾",
+          text: "Gracias por tu mensaje, te estaremos respondiendo a la brevedad.",
+          confirmButtonText: "¡Genial!",
+          confirmButtonColor: "#da8f44",
+        });
+        form.reset(); // Limpia el formulario
       }
     });
-  });
+  }
+});
 
-//------------JS PARA PREGUNTAS FRECUENTES( DATOS GAURDADOS EN LOCALSTORAGE)-----------
-
-alert ("Si tenés otra duda,  no dudes en contactarnos!")
-
-
-let ciudad = prompt("Si te gustaria tener un Catfecito cerca,  contanos cual es tu ciudad")
-
-console.log(ciudad);
-
-localStorage.setItem("ciudad",ciudad);
-
-let ciudadlocalstorage = localStorage.getItem("ciudad")
-
-console.log(ciudadlocalstorage);
-
-
-
-//----------JS SECCION MENU ( BASE DE DATOS TIPO JSON,DATOS GUARDADOS Y TRAIDOS DEL LOCALSTORAGE)-------
-
-
+// ------------------- SECCIÓN BEBIDAS DEL MENÚ -------------------
+// Array de objetos con información de bebidas
 const bebidas = [
   {
-    nombre: "CAT-LATTE (Café con leche)",
-    descripcion: "Delicado y suave como una caricia felina. Café espresso con leche cremosa.",
-    clase: "cafe-leche",
-    img: "../img/caf late(cafe con leche).webp",
-    alt: "foto de un café cremoso"
+    nombre: "Cat-latte", // Nombre de la bebida
+    descripcion: "", // Descripción vacía
+    clase: "cafe-leche", // Clase CSS
+    imagen: "../img/caf late(cafe con leche).webp", // Ruta imagen
+    alt: "foto de un café cremoso", // Texto alternativo
   },
   {
     nombre: "Gato Solo",
-    descripcion: "Puro, intenso, sin vueltas. Como un michi con carácter fuerte.",
+    descripcion: "",
     clase: "cafe-solo",
-    img: "../img/20250602_1545_Catfecito Café y Gato_simple_compose_01jwrzb5e1fn695vwdngtsaa9s.png",
-    alt: "foto de una taza de café solo"
+    imagen:
+      "../img/20250602_1545_Catfecito Café y Gato_simple_compose_01jwrzb5e1fn695vwdngtsaa9s.png",
+    alt: "foto de una taza de café solo",
   },
   {
     nombre: "Matcha-miau",
-    descripcion: "Verde vibrante y lleno de vida. Té matcha batido con leche suave: un mimo oriental.",
+    descripcion: "",
     clase: "cafe-matcha",
-    img: "../img/20250602_1549_Taza Catfecito con Matcha_simple_compose_01jwrzjrjxe68ttprj178dmz3v.png",
-    alt: "una taza de matcha"
-  }
+    imagen:
+      "../img/20250602_1549_Taza Catfecito con Matcha_simple_compose_01jwrzjrjxe68ttprj178dmz3v.png",
+    alt: "una taza de matcha",
+  },
 ];
 
+// Obtiene la sección de bebidas del menú
+const seccionBebidas = document.getElementById("seccionBebidas");
 
-const bebidasJason = JSON.stringify(bebidas);
-console.log(bebidasJason);
+// Si existe la sección...
+if (seccionBebidas) {
+  // Itera sobre cada bebida
+  bebidas.forEach((bebida) => {
+    // Crea un div para la tarjeta
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "tarjeta"; // Asigna clase CSS
 
-localStorage.setItem("bebidas", bebidasJason);
+    // Asigna el HTML interno con los datos de la bebida
+    tarjeta.innerHTML = `
+      <img src="${bebida.imagen}" alt="${bebida.nombre}"> <!-- Imagen -->
+      <h3>${bebida.nombre}</h3> <!-- Nombre -->
+      <p>${bebida.descripcion}</p> <!-- Descripción -->
+      <button>Elegir</button> <!-- Botón para seleccionar -->
+    `;
+
+    // Obtiene el botón y agrega event listener
+    const boton = tarjeta.querySelector("button");
+    boton.addEventListener("click", () => {
+      agregarAlPedido(bebida); // Llama a la función para agregar al pedido
+    });
+
+    // Agrega la tarjeta al DOM
+    seccionBebidas.appendChild(tarjeta);
+  });
+}
+
+// ------------------- AGREGAR AL PEDIDO boton Menu -------------------
+// Función para agregar bebidas al pedido
+function agregarAlPedido(bebida) {
+  // Obtiene pedidos existentes del localStorage o array vacío
+  let pedidos = JSON.parse(localStorage.getItem("pedidoCatfecito")) || [];
+
+  // Agrega la bebida al array
+  pedidos.push(bebida);
+
+  // Guarda el array actualizado en localStorage
+  localStorage.setItem("pedidoCatfecito", JSON.stringify(pedidos));
+
+  // Muestra alerta con SweetAlert2
+  Swal.fire({
+    title: `¡${bebida.nombre} agregado! 🐾`,
+    text: "Tu bebida fue añadida al pedido correctamente.",
+    imageUrl: bebida.imagen, // Muestra imagen de la bebida
+    imageAlt: `Imagen de ${bebida.nombre}`,
+    imageWidth: 200,
+    confirmButtonText: "OK",
+    confirmButtonColor: "#da8f44", // Color naranja
+  });
+}

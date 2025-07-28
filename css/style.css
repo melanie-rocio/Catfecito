@@ -626,6 +626,53 @@ font-size:xx-large;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+
+#seccionBebidas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.tarjeta {
+  background-color: #fdf1dc;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.tarjeta h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.tarjeta p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.tarjeta button {
+  background-color: #e0c28c;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tarjeta button:hover {
+  background-color: #c59e64;
+}
+
 /*--------------------------------------------------------------------------------*/
 /*-------------------- Seccion Preguntas Frecuenstes -----------------------------*/
 
